@@ -4,6 +4,8 @@ import br.unisc.pos.ws.puzzle1.ConversorNumeroRomano;
 import br.unisc.pos.ws.puzzle2.Palavra;
 import br.unisc.pos.ws.puzzle2.VerificadorPalavraPrima;
 import br.unisc.pos.ws.puzzle3.VerificadorAnoBissexto;
+import br.unisc.pos.ws.puzzle4.CalculadoraTroco;
+import br.unisc.pos.ws.puzzle4.Troco;
 
 /**
  * Pós Graduação em Engenharia de Software com Ênfase em Soluções de Governo.<br>
@@ -12,6 +14,7 @@ import br.unisc.pos.ws.puzzle3.VerificadorAnoBissexto;
  * 
  * Implementação de 4 métodos para web service SOAP:<br>
  * <ul>
+ * <li>Calcular menor troco</li>
  * <li>Consultar palavra prima</li>
  * <li>Conversor número romano</li>
  * <li>Verificar ano bissexto</li>
@@ -23,6 +26,25 @@ import br.unisc.pos.ws.puzzle3.VerificadorAnoBissexto;
  * @author Thiago Steigleder Gomes
  */
 public class PuzzleSoapWSImpl {
+
+    /**
+     * Recebe o valor de uma conta a ser paga e o valor efetivamente pago por
+     * ela e então devolve o valor do troco com o menor número de cédulas e
+     * moedas possíveis.
+     * 
+     * @param valorConta
+     *            valor a ser pago.
+     * 
+     * @param valorPago
+     *            valor efetivamente pago.
+     * 
+     * @return objeto {@code Troco} contendo quantas cédulas e moedas de cada
+     *         valor foram usadas para pagar o troco.
+     */
+    public Troco calcularMenorTroco(double valorConta, double valorPago) {
+        CalculadoraTroco calculadora = new CalculadoraTroco();
+        return calculadora.calcularMenorTroco(valorConta, valorPago);
+    }
 
     /**
      * Recebe uma palava como entrada e retorna se esta palavara é ou não prima.<br>
