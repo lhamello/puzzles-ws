@@ -1,4 +1,4 @@
-package br.unisc.pos.ws;
+package br.unisc.pos.ws.puzzle1;
 
 import java.util.HashMap;
 import java.util.Map;
