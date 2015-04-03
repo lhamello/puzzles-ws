@@ -4,14 +4,27 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ConversorNumeroRomano {
-    
+
     private final String REGEX_NUM_ROMANO = "(M{0,3})(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})";
     private Map<String, Integer> numerosRomanos;
 
+    /**
+     * Inicializa o mapa de números romanos com o valor individual de cada
+     * número romano:
+     * <ul>
+     * <li>I = 1</li>
+     * <li>V = 5</li>
+     * <li>X = 10</li>
+     * <li>L = 50</li>
+     * <li>C = 100</li>
+     * <li>D = 500</li>
+     * <li>M = 1000</li>
+     * </ul>
+     */
     public ConversorNumeroRomano() {
         if (numerosRomanos == null) {
             numerosRomanos = new HashMap<>();
-            
+
             numerosRomanos.put("I", 1);
             numerosRomanos.put("V", 5);
             numerosRomanos.put("X", 10);
@@ -21,7 +34,7 @@ public class ConversorNumeroRomano {
             numerosRomanos.put("M", 1000);
         }
     }
-    
+
     /**
      * Converte uma string contendo um número romano para o valor inteiro
      * correspondente.
@@ -36,29 +49,29 @@ public class ConversorNumeroRomano {
      */
     public Integer converterParaInteiro(String numeroRomano) {
         Integer valorAcumulado = 0;
-        
+
         this.verificarArgumento(numeroRomano);
-        
+
         if (numeroRomano.length() == 1) {
             valorAcumulado = this.consultarValorCaracter(0, numeroRomano);
         } else {
             for (int i = 0; i < numeroRomano.length() - 1; i++) {
                 Integer valorCaracterAtual = this.consultarValorCaracter(i, numeroRomano);
-                Integer valorCaracterProximo = this.consultarValorCaracter((i+1), numeroRomano);
-                
+                Integer valorCaracterProximo = this.consultarValorCaracter((i + 1), numeroRomano);
+
                 if (valorCaracterAtual >= valorCaracterProximo) {
                     valorAcumulado += valorCaracterAtual;
                 } else {
                     valorAcumulado -= valorCaracterAtual;
                 }
             }
-            
+
             valorAcumulado += this.consultarValorCaracter(numeroRomano.length() - 1, numeroRomano);
         }
-        
+
         return valorAcumulado;
     }
-    
+
     /**
      * Buscar valor (inteiro) de um caracter na string informada com um número
      * romano.
@@ -77,7 +90,7 @@ public class ConversorNumeroRomano {
         char caracter = numeroRomano.charAt(indice);
         return numerosRomanos.get("" + caracter);
     }
-    
+
     /**
      * Verifica se o valor informado é um número romano válido.
      * 
@@ -92,5 +105,5 @@ public class ConversorNumeroRomano {
             throw new IllegalArgumentException("Argumento inválido: " + numeroRomano + ".");
         }
     }
-    
+
 }

@@ -4,13 +4,22 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class VerificadorPalavraPrima {
-    
+
     private Map<String, Integer> valoresLetras;
 
+    /**
+     * Inicializa o valor individual de cada letra.<br>
+     * São utilizadas apenas as 26 letras do alfabeto maiúsculas e minúsculas.
+     * Caracteres especiais não são considerados, assim como acentuação.<br>
+     * <br>
+     * 
+     * As letras de a-z (minúsculas) tem valor de 1-26.<br>
+     * As letras de A-Z (maiúsculas) tem valor de 27-52.
+     */
     public VerificadorPalavraPrima() {
         if (valoresLetras == null) {
             valoresLetras = new HashMap<>();
-            
+
             valoresLetras.put("a", 1);
             valoresLetras.put("b", 2);
             valoresLetras.put("c", 3);
@@ -37,7 +46,7 @@ public class VerificadorPalavraPrima {
             valoresLetras.put("x", 24);
             valoresLetras.put("y", 25);
             valoresLetras.put("z", 26);
-            
+
             valoresLetras.put("A", 27);
             valoresLetras.put("B", 28);
             valoresLetras.put("C", 29);
@@ -66,37 +75,65 @@ public class VerificadorPalavraPrima {
             valoresLetras.put("Z", 52);
         }
     }
-    
+
+    /**
+     * Verifica se uma palavra é prima a partir da soma de suas letras.
+     * 
+     * @param palavra
+     *            palavra a ser testada.
+     * 
+     * @return objeto {@code Palavra} dizendo se a palavra informada é prima ou
+     *         não.
+     * 
+     * @throws IllegalArgumentException
+     *             se a palavra informada conter caracteres inválidos.
+     */
     public Palavra verificarPalavra(String palavra) {
         Integer soma = this.somarPalavra(palavra);
         Boolean primo = this.verificarPalavraPrima(soma);
-        
+
         Palavra resposta = new Palavra();
-        
+
         resposta.setDescricao(palavra);
         resposta.setSoma(soma);
         resposta.setPrima(primo);
-        
+
         return resposta;
     }
-    
+
+    /**
+     * Método resposável por somar a palavra.
+     * 
+     * @param palavra
+     *            palavra que terá seus caracteres somados.
+     * 
+     * @return a soma total dos caracteres da palavra.
+     */
     private Integer somarPalavra(String palavra) {
         Integer soma = 0;
-        
+
         for (int i = 0; i < palavra.length(); i++) {
             char c = palavra.charAt(i);
             Integer valorLetra = valoresLetras.get(c);
-            
+
             if (valorLetra != null) {
                 soma += valorLetra;
             } else {
                 throw new IllegalArgumentException("Caracter inválido: [" + c + "]. \n Aceita somente [a-z][A-Z]");
             }
         }
-        
+
         return soma;
     }
-    
+
+    /**
+     * Método resposável por verificar se o número da soma total é primo ou não.
+     * 
+     * @param soma
+     *            valor total da soma.
+     * 
+     * @return {@code true} se a soma for prima ou {@code false} se não for.
+     */
     private Boolean verificarPalavraPrima(Integer soma) {
         boolean resposta = false;
 
@@ -119,5 +156,5 @@ public class VerificadorPalavraPrima {
 
         return resposta;
     }
-    
+
 }
