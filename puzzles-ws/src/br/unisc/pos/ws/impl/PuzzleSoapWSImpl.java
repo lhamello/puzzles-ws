@@ -3,6 +3,7 @@ package br.unisc.pos.ws.impl;
 import br.unisc.pos.ws.puzzle1.ConversorNumeroRomano;
 import br.unisc.pos.ws.puzzle2.Palavra;
 import br.unisc.pos.ws.puzzle2.VerificadorPalavraPrima;
+import br.unisc.pos.ws.puzzle3.VerificadorAnoBissexto;
 
 /**
  * Pós Graduação em Engenharia de Software com Ênfase em Soluções de Governo.<br>
@@ -11,8 +12,9 @@ import br.unisc.pos.ws.puzzle2.VerificadorPalavraPrima;
  * 
  * Implementação de 4 métodos para web service SOAP:<br>
  * <ul>
- * <li>Consultar Palavra Prima</li>
- * <li>Conversor Número Romano</li>
+ * <li>Consultar palavra prima</li>
+ * <li>Conversor número romano</li>
+ * <li>Verificar ano bissexto</li>
  * </ul>
  * 
  * @author Alexandre Coutinho Evangelista
@@ -51,4 +53,16 @@ public class PuzzleSoapWSImpl {
         return conversor.converterParaInteiro(numeroRomano);
     }
 
+    /**
+     * Recebe um ano como entrada e retorna se ele é ou não bissexto.
+     * 
+     * @param ano
+     *            ano que será testado.
+     * 
+     * @return se o ano informado é ou não bissexto.
+     */
+    public Boolean verificarAnoBissexto(Integer ano) {
+        VerificadorAnoBissexto verificador = new VerificadorAnoBissexto();
+        return verificador.verificarAno(ano);
+    }
 }
