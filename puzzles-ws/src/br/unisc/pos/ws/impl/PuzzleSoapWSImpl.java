@@ -19,7 +19,8 @@ import br.unisc.pos.ws.puzzle4.Troco;
  * métodos são os seguintes:<br>
  * <ul>
  * <li>Método 1: Converte números romanos para números inteiros.</li>
- * <li>Método 2: Informa se uma palavra é ou não prima através da soma dos valores de seus caracteres.</li>
+ * <li>Método 2: Informa se uma palavra é ou não prima através da soma dos
+ * valores de seus caracteres.</li>
  * <li>Método 3: Verifica se um ano é ou não bissexto.</li>
  * <li>Método 4: Calcula o menor número de cédulas e moedas para um troco.</li>
  * </ul>
@@ -30,7 +31,7 @@ import br.unisc.pos.ws.puzzle4.Troco;
  * @author Thiago Steigleder Gomes
  */
 public class PuzzleSoapWSImpl {
-    
+
     /**
      * Recebe um número romano e retorna o seu valor para um número inteiro.
      * 
@@ -43,7 +44,7 @@ public class PuzzleSoapWSImpl {
         ConversorNumeroRomano conversor = new ConversorNumeroRomano();
         return conversor.converterParaInteiro(numeroRomano);
     }
-    
+
     /**
      * Recebe uma palava como entrada e retorna se esta palavara é ou não prima.<br>
      * Além disso no retorno é possível verificar a palavra que foi utilizada e
@@ -72,7 +73,7 @@ public class PuzzleSoapWSImpl {
         VerificadorAnoBissexto verificador = new VerificadorAnoBissexto();
         return verificador.verificarAno(ano);
     }
-    
+
     /**
      * Recebe o valor de uma conta a ser paga e o valor efetivamente pago por
      * ela; então retorna o valor do troco com o menor número de cédulas e
