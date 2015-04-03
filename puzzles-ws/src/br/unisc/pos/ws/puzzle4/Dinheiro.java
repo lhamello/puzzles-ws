@@ -3,6 +3,15 @@ package br.unisc.pos.ws.puzzle4;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+/**
+ * Classe para representar dinheiro.
+ * 
+ * @author Alexandre Coutinho Evangelista
+ * @author Critiano Stein Chaves
+ * @author Luiz Henrique Araujo Mello
+ * @author Thiago Steigleder Gomes
+ * 
+ */
 public class Dinheiro {
 
     private BigDecimal valor;
@@ -30,7 +39,7 @@ public class Dinheiro {
         valor = valores[1];
         return valores[0].intValue();
     }
-    
+
     public double doubleValue() {
         return valor.doubleValue();
     }

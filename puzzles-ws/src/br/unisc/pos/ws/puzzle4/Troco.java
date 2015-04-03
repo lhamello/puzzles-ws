@@ -1,6 +1,14 @@
 package br.unisc.pos.ws.puzzle4;
 
-
+/**
+ * Classe que representa um troco.
+ * 
+ * @author Alexandre Coutinho Evangelista
+ * @author Critiano Stein Chaves
+ * @author Luiz Henrique Araujo Mello
+ * @author Thiago Steigleder Gomes
+ * 
+ */
 public class Troco {
 
     private Integer cedulaCemReais;
@@ -15,7 +23,7 @@ public class Troco {
     private Integer moedaCincoCentavos;
     private Integer moedaUmCentavo;
     private Double valorTroco;
-    
+
     public Troco(int[] valores, Double valorTroco) {
         this.cedulaCemReais = valores[0];
         this.cedulaCinquentaReais = valores[1];
@@ -118,7 +126,7 @@ public class Troco {
     public void setMoedaUmCentavo(Integer moedaUmCentavo) {
         this.moedaUmCentavo = moedaUmCentavo;
     }
-    
+
     public Double getValorTroco() {
         return valorTroco;
     }
