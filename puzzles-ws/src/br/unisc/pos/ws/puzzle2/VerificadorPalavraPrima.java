@@ -3,6 +3,26 @@ package br.unisc.pos.ws.puzzle2;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Um número primo é definido se ele possuir exatamente dois divisores: o número
+ * um e ele próprio. São exemplos de números primos: 2, 3, 5, 101, 367 e 523.
+ * <p>
+ * Neste problema, você deve ler uma palavra composta somente por letras
+ * [a-zA-Z]. Cada letra possui um valor específico, a vale 1, b vale 2 e assim
+ * por diante, até a letra z que vale 26. Do mesmo modo A vale 27, B vale 28,
+ * até a letra Z que vale 52.
+ * <p>
+ * Esta classe é capaz de definir se uma palavra é prima ou não. Para ela ser
+ * prima, a soma dos valores de suas letras deve ser um número primo.
+ * 
+ * @author Alexandre Coutinho Evangelista
+ * @author Critiano Stein Chaves
+ * @author Luiz Henrique Araujo Mello
+ * @author Thiago Steigleder Gomes
+ * 
+ * @see <a
+ *      href="http://dojopuzzles.com/problemas/exibe/palavras-primas/">http://dojopuzzles.com/problemas/exibe/palavras-primas//</a>
+ */
 public class VerificadorPalavraPrima {
 
     private Map<String, Integer> valoresLetras;
@@ -108,6 +128,9 @@ public class VerificadorPalavraPrima {
      *            palavra que terá seus caracteres somados.
      * 
      * @return a soma total dos caracteres da palavra.
+     * 
+     * @throws IllegalArgumentException
+     *             se a palavra informada conter caracteres inválidos.
      */
     private Integer somarPalavra(String palavra) {
         Integer soma = 0;

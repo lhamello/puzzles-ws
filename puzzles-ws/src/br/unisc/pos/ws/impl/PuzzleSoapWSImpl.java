@@ -46,15 +46,24 @@ public class PuzzleSoapWSImpl {
     }
 
     /**
-     * Recebe uma palava como entrada e retorna se esta palavara é ou não prima.<br>
-     * Além disso no retorno é possível verificar a palavra que foi utilizada e
-     * também a soma dos valores das letras desta palavra.
+     * Recebe uma palavra como entrada e retorna se este palavar é ou não prima.
+     * <p>
+     * Cada letra, da palavra, tem um valor atribuído e a soma dos valores das
+     * letras é que irá indicar se a palavra é ou não prima.
+     * <p>
+     * As letras aceitas são [a-z] minúsculas, com valores entre 1 e 26; e [A-Z]
+     * maiúsculas, com valores entre 27 e 52. Não serão aceitos caracteres
+     * especiais ou acentuados e também números.
      * 
      * @param palavra
-     *            palavra a ser testada.
+     *            palavra que será testada.
      * 
-     * @return um objeto {@code Palavara} que contém a informação de que se a
-     *         palavra é ou não prima.
+     * @return Um objeto {@code Palavra} que contém a informação se a palavra é
+     *         ou não prima. Também contém a descrição da palavra e a soma dos
+     *         valores das letras.
+     * 
+     * @throws IllegalArgumentException
+     *             se a palavra informada conter caracteres inválidos.
      */
     public Palavra consultarPalavraPrima(String palavra) {
         VerificadorPalavraPrima verificador = new VerificadorPalavraPrima();
