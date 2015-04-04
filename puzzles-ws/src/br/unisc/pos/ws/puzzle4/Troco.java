@@ -23,7 +23,10 @@ public class Troco {
     private Integer moedaCincoCentavos;
     private Integer moedaUmCentavo;
     private Double valorTroco;
-
+    
+    public Troco() {
+    }
+    
     public Troco(int[] valores, Double valorTroco) {
         this.cedulaCemReais = valores[0];
         this.cedulaCinquentaReais = valores[1];

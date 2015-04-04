@@ -109,7 +109,7 @@ public class PuzzleSoapWSImpl {
      * @throws IllegalArgumentException
      *             se o valor pago for menor que o valor da conta.
      */
-    public Troco calcularMenorTroco(double valorConta, double valorPago) {
+    public Troco calcularMenorTroco(Double valorConta, Double valorPago) {
         CalculadoraTroco calculadora = new CalculadoraTroco();
         return calculadora.calcularMenorTroco(valorConta, valorPago);
     }
