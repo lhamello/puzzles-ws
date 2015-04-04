@@ -137,7 +137,7 @@ public class VerificadorPalavraPrima {
 
         for (int i = 0; i < palavra.length(); i++) {
             char c = palavra.charAt(i);
-            Integer valorLetra = valoresLetras.get(""+c);
+            Integer valorLetra = valoresLetras.get("" + c);
 
             if (valorLetra != null) {
                 soma += valorLetra;
