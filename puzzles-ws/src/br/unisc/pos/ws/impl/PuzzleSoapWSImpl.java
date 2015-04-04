@@ -33,12 +33,17 @@ import br.unisc.pos.ws.puzzle4.Troco;
 public class PuzzleSoapWSImpl {
 
     /**
-     * Recebe um número romano e retorna o seu valor para um número inteiro.
+     * Recebe um número romano e retorna o número inteiro correspondente.
+     * <p>
+     * Este método é capaz de converter números romanos entre 1 e 3999.
      * 
      * @param numeroRomano
      *            número romano que será convertido.
      * 
-     * @return o valor do número romano em um numeral inteiro.
+     * @return O valor do número romano em um numeral inteiro.
+     * 
+     * @throws IllegalArgumentException
+     *             se o argumento informado for inválido.
      */
     public Integer converterNumeroRomanoParaInteiro(String numeroRomano) {
         ConversorNumeroRomano conversor = new ConversorNumeroRomano();

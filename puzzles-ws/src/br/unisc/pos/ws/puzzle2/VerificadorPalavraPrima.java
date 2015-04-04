@@ -21,7 +21,7 @@ import java.util.Map;
  * @author Thiago Steigleder Gomes
  * 
  * @see <a
- *      href="http://dojopuzzles.com/problemas/exibe/palavras-primas/">http://dojopuzzles.com/problemas/exibe/palavras-primas//</a>
+ *      href="http://dojopuzzles.com/problemas/exibe/palavras-primas/">http://dojopuzzles.com/problemas/exibe/palavras-primas/</a>
  */
 public class VerificadorPalavraPrima {
 
