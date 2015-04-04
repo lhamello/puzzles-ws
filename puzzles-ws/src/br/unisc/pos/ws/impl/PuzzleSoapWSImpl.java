@@ -82,6 +82,9 @@ public class PuzzleSoapWSImpl {
      *            ano que será testado.
      * 
      * @return se o ano informado é ou não bissexto.
+     * 
+     * @throws IllegalArgumentException
+     *             se o ano informado for inválido, ou seja, menor ou igual à 0.
      */
     public Boolean verificarAnoBissexto(Integer ano) {
         VerificadorAnoBissexto verificador = new VerificadorAnoBissexto();

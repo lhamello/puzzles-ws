@@ -61,8 +61,15 @@ public class VerificadorAnoBissexto {
      *            ano a ser testado.
      * 
      * @return {@code true} se o ano for bissextou ou {@code false} se não for.
+     * 
+     * @throws IllegalArgumentException
+     *             se o ano informado for inválido, ou seja, menor ou igual à 0.
      */
     public Boolean verificarAno(Integer ano) {
+        if (ano <= 0) {
+            throw new IllegalArgumentException("Ano inválido.");
+        }
+
         boolean resposta = false;
 
         if ((ano % 400 == 0) || ((ano % 4 == 0) && (ano % 100 != 0))) {
